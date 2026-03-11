@@ -291,7 +291,9 @@ buttons[correct].classList.add("btn-success");
 
 document.addEventListener("keydown", function(e){
 
-if(e.key === "Enter" && answered){
+if(e.key === "Enter"){
+
+answered = false;
 
 nextQuestion();
 
