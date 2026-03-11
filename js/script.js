@@ -293,8 +293,12 @@ document.addEventListener("keydown", function(e){
 
 if(e.key === "Enter"){
 
-answered = false;
+if(!answered){
+alert("Please select an answer first!");
+return;
+}
 
+answered = false;
 nextQuestion();
 
 }
