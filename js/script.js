@@ -1,4 +1,13 @@
 let answered = false;
+function startQuiz(){
+
+document.getElementById("startPage").classList.add("d-none");
+
+document.getElementById("quizPage").classList.remove("d-none");
+
+loadQuestion();
+
+}
 const quiz = [
 {
 question:"Which language is mainly used for frontend web development?",
@@ -216,21 +225,24 @@ function loadQuestion(){
 answered = false;
 
 clearInterval(timer);
-time = 30;
 
-document.getElementById("timer").innerText = "Time: " + time;
+time = 10;
+
+document.getElementById("timer").innerText = "⏱ Time Left: " + time + "s";
 
 timer = setInterval(()=>{
 
 time--;
 
-document.getElementById("timer").innerText = "Time: " + time;
+document.getElementById("timer").innerText = "⏱ Time Left: " + time + "s";
 
 if(time === 0){
 nextQuestion();
 }
 
 },1000);
+
+
 
 let q = quiz[currentQuestion];
 
